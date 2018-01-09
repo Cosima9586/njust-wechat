@@ -1,1 +1,0 @@
-# njust-wechat
