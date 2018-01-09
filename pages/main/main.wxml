@@ -1,0 +1,16 @@
+<!--pages/main/main.wxml-->
+<view class='custom_menu'>
+    <!--  课表查询模块  -->
+    <view>
+        <button class="weui-btn mid-btn" bindtap="redictToClassTable" type="primary">课表查询</button>
+    </view>
+    <view>
+        <button class="weui-btn mid-btn" bindtap="redictToExam" type="primary">考试查询</button>
+    </view>
+    <view>
+        <button class="weui-btn mid-btn" bindtap="redictToBook" type="primary">图书查询</button>
+    </view>
+    <view>
+        <button class="weui-btn mid-btn" bindtap="redictToScore" type="primary">资讯查询</button>
+    </view>
+</view>

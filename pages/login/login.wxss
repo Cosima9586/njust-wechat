@@ -1,0 +1,49 @@
+/* pages/login/login.wxss */
+.weui-cells__title {
+    padding:.5em 30px;
+    font-size:25px; 
+    color: blueviolet; 
+    font-weight: bold; 
+    text-align: center
+}
+
+.mini-btn {
+    margin-top: 30px;
+    margin-right: 100px;
+    margin-left: 100px;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.custom_margin {
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.custom_label {
+    font-weight: bold; 
+    width: 80px;
+    font-size: 20px; 
+}
+
+.weui-footer_fixed-bottom{
+    margin-bottom: 0;
+}
+
+.logo_img {
+    width: 270px;
+    height: 63.48px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+/* .custom_image {
+    background-image: url("../../static/flw.jpg");
+    background-color: aliceblue
+} */
+
+/* page {
+    background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513760581056&di=ba760ce7e199f2c8538236601b7b8d8e&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fb7003af33a87e950e94eb1561b385343fbf2b4ab.jpg");
+} */

@@ -1,0 +1,6 @@
+/* pages/news/news.wxss */
+.custom_panel__hd {
+  font-size: 20px;
+  background-color: #930093;
+  color: #fff;
+}

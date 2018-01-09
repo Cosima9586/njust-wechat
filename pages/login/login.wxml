@@ -1,0 +1,39 @@
+<!--pages/login/login.wxml-->
+<view class='custom_image'>
+
+<image class='logo_img' src='../../static/logo.png' mode='aspectFit'></image>
+
+
+<form bindsubmit='login_submit'>
+<!-- <view class="weui-cells__title">南理工研究生助手</view> -->
+<view class="weui-cells weui-cells_after-title custom_margin">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label custom_label">学号</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入学号" name="stu_id" value="{{stuIdTxt}}"/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+            <view class="weui-label custom_label">密码</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input password='true' class="weui-input" placeholder="请输入密码" name="password" value="{{passwordTxt}}"/>
+        </view>
+    </view>
+</view>
+<button form-type='submit' class="weui-btn mini-btn" type="primary">登录</button>
+</form>
+
+
+<view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__links">
+        <navigator url="" class="weui-footer__link">南京理工大学研究生院</navigator>
+        <navigator url="" class="weui-footer__link">南京理工大学图书馆</navigator>
+    </view>
+    <view class="weui-footer__text">Copyright © 2017 QianmuTeam</view>
+</view>
+
+</view>
