@@ -1,0 +1,14 @@
+/* pages/news/newsDetail.wxss */
+
+.page__title {
+  margin: 5px 15px;
+  color: #20486a
+}
+
+.time_stamp {
+  margin-left: 16px;
+  color: #666;
+  font-size: 12px;
+
+
+}

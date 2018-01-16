@@ -27,7 +27,6 @@
 <button form-type='submit' class="weui-btn mini-btn" type="primary">登录</button>
 </form>
 
-
 <view class="weui-footer weui-footer_fixed-bottom">
     <view class="weui-footer__links">
         <navigator url="" class="weui-footer__link">南京理工大学研究生院</navigator>

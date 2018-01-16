@@ -1,14 +1,26 @@
 /* pages/main/main.wxss */
-.mid-btn {
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    height: 80px;
-    text-align: center;
-    font-size: 30px;
+.container {
+  background-size: 100%;
+  background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516032556427&di=6c99116e02b1e02ee0653c13dfcf5aac&imgtype=0&src=http%3A%2F%2Fimg5q.duitang.com%2Fuploads%2Fitem%2F201504%2F12%2F20150412H3235_vAFJk.jpeg);
 }
 
 .custom_menu {
-    margin-top: 50px;
+    display: table;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border: solid; */
+}
+
+.component {
+   /* border: solid;    */
+  text-align: center;
+  padding-bottom: 10px;
+  display: table-cell;
+  vertical-align: middle
+}
+
+.text {
+  font-size: 16px;
+  font-weight: bold;
 }

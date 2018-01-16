@@ -1,32 +1,20 @@
 {
     "pages": [
         "pages/login/login",
+        "pages/book/searchBook",
         "pages/main/main",
         "pages/classtable/classtable",
         "pages/book/book",
         "pages/index/index",
         "pages/logs/logs",
-        "pages/news/news"
+        "pages/news/news",
+        "pages/score/score",
+        "pages/news/newsDetail"
     ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "南理工研究生助手",
         "navigationBarTextStyle": "black"
-    },
-    "tabBar": {
-        "color": "#a9b7b7",
-        "selectedColor": "#11cd6e",
-        "borderStyle": "black",
-        "list": [
-            {
-                "pagePath": "pages/login/login",
-                "text": "切换账号"
-            },
-            {
-                "pagePath": "pages/login/login",
-                "text": "注销账号"
-            }
-        ]
     }
 }

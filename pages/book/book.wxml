@@ -1,2 +1,32 @@
 <!--pages/book/book.wxml-->
-<text>pages/book/book.wxml</text>
+<!--pages/book/bookResult.wxml-->
+<view class = "page">
+   <view class="page__bd">
+      <view class="custom_panel__hd weui-panel__hd">馆藏信息</view>
+      <view wx:for="{{bookDetail}}" wx:for-index="id" wx:for-item="itemName">
+        <view class="custom_form_pre weui-form-preview">
+            <!-- <view class="custom_form_pre__hd weui-form-preview__hd">
+                
+            </view> -->
+            <view class="custom_form_pre__bd weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">索书号</view>
+                    <view class="weui-form-preview__value">{{itemName.detail.callcode}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">条码号</view>
+                    <view class="weui-form-preview__value">{{itemName.detail.barcode}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">校区-馆藏地</view>
+                    <view class="weui-form-preview__value">{{itemName.detail.location}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">书刊状态</view>
+                    <view class="weui-form-preview__value">{{itemName.detail.state}}</view>
+                </view>
+            </view>
+        </view>
+      </view>
+   </view>
+</view>

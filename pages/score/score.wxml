@@ -1,0 +1,55 @@
+<!--pages/test/score.wxml-->
+
+
+  <scroll-view bindscroll="handlerScroll" scroll-y style="height: 100%;">
+
+
+    <view style='height: {{ui.topWidth}}px'>
+      <canvas style='left:{{ui.canvasLeft}}px; width: {{ui.canvasWidth}}px; height: {{ui.canvasWidth}}px; margin-top: {{ui.canvasWidth * 0.1}}px; display: inline-block' canvas-id="myCanvas"></canvas>
+
+      <view style='text-align: center; margin-top: -{{(ui.topWidth+ui.baseFontSize)/2}}px; font-size: {{ui.baseFontSize}}px;'>{{average_score}}</view>
+    </view>
+
+    <view class='noScore' wx:if='{{average_score == "~ no ~"}}'>您还没有成绩出来！</view>
+
+    <view wx:for="{{score}}" wx:for-item='scoreItem' wx:key='unique'>
+      <view class="weui-panel__hd">
+
+        <view class='table'>
+          <view class='cell'>
+
+            <view style='font-weight: bold; color: {{ui.baseColor}}; font-size: {{ui.baseFontSize/2}}px'>{{scoreItem['课程名称']}}</view>
+
+            <view class='table' style='font-size: {{ui.baseFontSize * 2 /5}}px'>
+              <view class='cell'>
+                <view class="weui-form-preview__item">
+                  <view class="weui-form-preview__label">学分: {{scoreItem['学分']}}</view>
+                </view>
+
+              </view>
+
+              <view class='cell'>
+                <view class="weui-form-preview__item">
+                  <view class="weui-form-preview__label">类别: {{scoreItem['类别']}}</view>
+                </view>
+
+              </view>
+              <view class='cell'>
+                <view class="weui-form-preview__item">
+                  <view class="weui-form-preview__label">班级排名: {{scoreItem['班级排名']}}</view>
+                </view>
+              </view>
+
+            </view>
+
+          </view>
+          <view class='cell score' style='font-size: {{ui.baseFontSize * 2/ 3}}px; color:{{ui.baseColor}}'>
+            {{scoreItem['成绩']}}分
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+  </scroll-view>
+

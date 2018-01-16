@@ -97,12 +97,13 @@ Page({
 
               success: function (res) {
             
-                  console.log(res.data);
-                  console.log(res.data.loginResult);
+                //   console.log(res.data);
+                //   console.log(res.data.loginResult);
                 //   res.data.status = 'success';
                   if (res.data.loginResult === 'success') {
                       // 跳转到登录成功界面
                       getApp().globalData.classTable = res.data.classTable;
+                      getApp().globalData.score = res.data.score;
                       wx.hideLoading();
                     //   console.log(getApp().globalData.classTable);
                       wx.redirectTo({

@@ -1,0 +1,18 @@
+<!--pages/news/news D e tai l.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">{{newsDetail.title}}</view>
+        <view class="time_stamp">时间:  {{newsDetail.time}}</view>
+    </view>
+    <view class="weui-panel weui-panel_access page__bd">
+        <view class="weui-article">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+            <!-- <view>{{newsDetail.content}}</view> -->
+        </view>
+    </view>
+    <view class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </view>
+</view>
+

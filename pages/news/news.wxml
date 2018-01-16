@@ -1,55 +1,21 @@
 <!--pages/news/news.wxml-->
 <view class="weui-panel weui-panel_access">
     <view class="custom_panel__hd weui-panel__hd">通知公告</view>
+      <view wx:for="{{newslist}}" wx:for-index="id" wx:for-item="itemName">
         <view class="weui-panel__bd">
             <view class="weui-media-box weui-media-box_text">
-                <view class="weui-media-box__title">标题一</view>
-                <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
+                <view class="weui-media-box__title">{{itemName.title}}</view>
+                <view class="weui-media-box__desc">{{itemName.introduce}}</view>
             </view>
         </view>
         <view class="weui-panel__ft">
-            <view href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
-                <view class="weui-cell__bd">查看更多</view>
+            <view href="javascript:;" data-number="{{itemName.number}}" bindtap="showNews" class="weui-cell weui-cell_access weui-cell_link">查看更多
+                <!-- <navigator class="weui-cell__bd" url="../../pages/news/newsDetail?newsTitle={{itemName.title}}&newsTime={{itemName.time}}&newsContent={{itemName.content}}" open-type='navigate'>查看更多</navigator>  -->
                 <view class="weui-cell__ft"></view>
             </view>    
         </view>
-        <view class="weui-panel__bd">
-            <view class="weui-media-box weui-media-box_text">
-                <view class="weui-media-box__title">标题二</view>
-                <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
-            </view>
-        </view>
-        <view class="weui-panel__ft">
-            <view href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
-                <view class="weui-cell__bd">查看更多</view>
-                <view class="weui-cell__ft"></view>
-            </view>    
-        </view>
-        <view class="weui-panel__bd">
-            <view class="weui-media-box weui-media-box_text">
-                <view class="weui-media-box__title">标题三</view>
-                <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
-            </view>
-        </view>
-        <view class="weui-panel__ft">
-            <view href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
-                <view class="weui-cell__bd">查看更多</view>
-                <view class="weui-cell__ft"></view>
-            </view>    
-        </view>
-        <view class="weui-panel__bd">
-            <view class="weui-media-box weui-media-box_text">
-                <view class="weui-media-box__title">标题四</view>
-                <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
-            </view>
-        </view>
-        <view class="weui-panel__ft">
-            <view href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
-                <view class="weui-cell__bd">查看更多</view>
-                <view class="weui-cell__ft"></view>
-            </view>    
-        </view>
+      </view>
+      
 </view>
-<!-- <view wx:for="{{[age:12,name:'song'},{age:14,name:'yan'},{age:18,name:'jun'}]}}" wx:for-index='id' wx:for-item="itemName">
-    
-</view> -->
+
+<!-- <button form-type='submit' class="weui-btn mini-btn" bindtap='search'>查询</button> -->

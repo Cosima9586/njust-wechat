@@ -1,0 +1,75 @@
+<!--pages/book/searchBook.wxml-->
+
+<form bindsubmit='book_submit'>
+    <view class="weui-cells weui-cells_after-title custom_margin" style="margin-top:{{top}}">
+        <view class="weui-cell__bd">
+            <input class="weui-input custom_input" placeholder="请输入要检索的书名" name="findName" value="{{bookNameTxt}}" />
+            <input hidden='true' name='page' value='1'></input>
+        </view>
+    </view>
+    <button form-type='submit' class="weui-btn mini-btn">查询</button>
+</form>
+
+<view class="page" wx:if='{{resultTotal == 0}}' style='text-align:center; margin-top: 5em; color: red; font-weight: bold'>无查询结果</view>
+
+<view class="page" style="display:{{display}};">
+     <view style='margin-top: 15px'>
+        <view class="weui-cell weui-cell_select weui-cell_select-after" style='width: 100%'>
+            <view class="weui-cell__bd result-num">
+                {{resultTotal}} 条数据
+            </view> 
+
+            <view class="weui-cell__bd">
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{pageNum}}">
+                    <view class="picker" style='text-align:center; font-weight:bold'>
+                        选择页码
+                    </view>
+                </picker>
+            </view>
+
+             <view class="weui-cell__bd page-num">
+                当前页：{{curPage}} / {{pageNum.length}}
+            </view> 
+        </view>
+    </view> 
+    
+    <view class="page__bd">
+
+        <view class='book-list' style='width: {{windowWidth * 0.99}}px'>
+
+            <view class='book-info' wx:for="{{booklist}}" wx:for-index="id" wx:for-item="itemName">
+
+                <view style='display: table-cell; padding-bottom: 10px'>
+                    <view class="weui-form-preview__item">
+                        <!-- <view class="weui-form-preview__label">题名</view> -->
+                        <view class="weui-form-preview__value _title">{{itemName.name}}</view>
+                    </view>
+
+                    <view class="weui-form-preview__item">
+                        <view class="weui-form-preview__label">作者</view>
+                        <view class="weui-form-preview__value _info">{{itemName.author}}</view>
+                    </view>
+
+                    <view class="weui-form-preview__item">
+                        <view class="weui-form-preview__label">索书号</view>
+                        <view class="weui-form-preview__value _info">{{itemName.callcode}}</view>
+                    </view>
+
+                    <view class="weui-form-preview__item">
+                        <view class="weui-form-preview__label">图书类型</view>
+                        <view class="weui-form-preview__value _info">{{itemName.type}}</view>
+                    </view>
+
+                    <view class="weui-form-preview__item " style='margin-top: 0px; margin-bottom: 0px'>
+                        <form bindsubmit='showDetail'>
+                            <input hidden='true' name='href' value='{{itemName.url}}'></input>
+                            <button class="custom_btn weui-form-preview__btn weui-form-preview__btn_primary" form-type="submit">馆藏信息</button>
+                        </form>
+
+                    </view>
+                </view>
+
+            </view>
+        </view>
+    </view>
+</view>

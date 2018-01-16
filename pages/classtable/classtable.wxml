@@ -1,1 +1,83 @@
-<view>{{classtable}}</view>
+<!--pages/test/today.wxml-->
+
+<view class="stv-container">
+
+  <view class='table'>
+    <view class='cell' style='text-align: center; width: 30%; margin: 0 auto'>{{curYear}} 年 {{curMonth}} 月</view>
+
+    <view class='cell' wx:if='{{item["classroom"] != ""}}'>
+
+      <picker class='weui-btn weui-btn_default' bindchange="bindPickerChange" value="{{index}}" range="{{weeks}}" style=''>
+        <view style='text-align: center; width: 30%; margin: 0 auto' style=''>
+          {{curWeek}}
+          <image src="../../static/triangle.png" mode="aspectFill" style='width: 10px; height: 10px'></image>
+        </view>
+      </picker>
+    </view>
+
+    <view class='cell' bindtap='onLoad' style='font-weight: bold; color: darkred'>今天</view>
+  </view>
+
+  <view class="tab-bar">
+    <view wx:for="{{tabs}}" wx:key="unique" data-index="{{index}}" bindtap="handlerTabTap" class="tab {{activeTab==index?'tab-active':''}}" style="width: {{stv.windowWidth/tabs.length}}px">
+      <text>{{item}}</text>
+    </view>
+    <view style="width: {{stv.lineWidth}}px; left: {{stv.offset/tabs.length}}px" class="under-line {{!stv.tStart? 'withAnimate': ''}}"></view>
+  </view>
+
+
+  <view class="scroll-view">
+    <view bindtouchstart="handlerStart" catchtouchmove="handlerMove" bindtouchcancel="handlerCancel" bindtouchend="handlerEnd" class="scroll-view-wrapper {{!stv.tStart? 'withAnimate': ''}}" style="left: -{{stv.offset}}px">
+      <view style="width: {{stv.windowWidth}}px;" wx:for="{{tabs}}" wx:key="unique" class="one-scene">
+        <scroll-view style="height: 85%" scroll-y='true' bindscrolltolower="lower">
+
+          <view class='table' style='border-bottom: 1px solid #dadada;'>
+
+            <view class='tr' wx:for='{{activeClass}}'>
+
+              <view wx:for="{{item['sessions']}}">
+                <view class='cell sidemenu'>
+                  {{item}}
+                </view>
+              </view>
+
+              <view class='cell specific-class' style='background-color: {{item["classroom"]!=""?"aliceblue":"white"}}; font-family: Courier New, Courier, monospace'>
+
+                <view style='font-weight: bold; font-size: 20px'>{{item['name']}}</view>
+                <view class='table' style='color: purple; '>
+                  <view class='cell' wx:if='{{item["classroom"] != ""}}'>教室: {{item['classroom']}}</view>
+
+
+                  <view class='cell' wx:if='{{item["teacher"] != ""}}'>教师: {{item['teacher']}}</view>
+
+                </view>
+
+
+              </view>
+
+            </view>
+
+          </view>
+
+          <!-- <view wx:for='{{activeClass}}' class='table' style='text-align: center'>
+
+              <view class='cell' style=' width: {{0.1 * stv.windowWidth}}'>
+                <view wx:for='{{item["sessions"]}}'>{{item}}</view>
+              </view>
+
+              <view class='cell' style='width: {{0.9 * stv.windowWidth}}'>
+                  {{item['name']}}
+                  教室: {{item['classroom']}}
+                  教师: {{item['teacher']}}
+              </view>
+            
+          </view> -->
+
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+
+
+
+</view>

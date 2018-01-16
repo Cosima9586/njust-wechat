@@ -1,0 +1,129 @@
+/* pages/book/searchBook.wxss */
+.weui-cells__title {
+    padding:.5em 30px;
+    font-size:25px; 
+    color: blueviolet; 
+    font-weight: bold; 
+    text-align: center
+}
+
+.mini-btn {
+    margin-top: 30px;
+    margin-right: 100px;
+    margin-left: 100px;
+    background-color: #930093;
+    border-color: #4cae4c;
+    color:#FFFFFF;
+
+}
+
+.custom_margin {
+    margin-top: 150px; 
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.custom_input {
+  text-align: center
+}
+
+.page__bd {
+  margin-top: 10px;
+
+}
+
+.page__title {
+    margin-left: 25px;
+
+}
+.custom_form_pre {
+  padding: 0px 18px;
+  margin-bottom:5px;
+  
+}
+.custom_form_pre:after {
+  border-bottom:1rpx solid #d9d9d9;
+  margin: 0px 10px
+}
+
+.custom_form_pre:before{
+  margin: 0px 10px
+}
+
+.custom_form_pre__hd {
+  padding:0px 15px;
+}
+
+.custom_form_pre__bd {
+  padding:0px 15px;
+  
+}
+
+.custom_form_pre__ft {
+  /* line-height: 35px */
+  height: 100%
+}
+
+.custom_btn {
+  background-color:#fff;
+  margin: auto;
+  border-bottom: 1rpx solid #930093;
+}
+
+.picker {
+  color: #0bb20c;
+}
+
+.book-list {
+    display: table;
+    margin-left: 0.1em;
+    margin-right: 0.1em
+}
+
+.book-info {
+    display: table-row;
+     border: #d9d9d9
+}
+
+.weui-form-preview__label {
+    margin-left: 2em;
+    margin-top: 0.6em
+}
+
+.weui-form-preview__value {
+    margin-top: 1em
+}
+
+._title {
+    background-color: #930093;
+    color:#FFFFFF;
+    border-bottom: solid #d9d9d9; 
+    text-align: center; 
+    font-weight: bold; 
+    font-size: 16px
+}
+
+.weui-form-preview__btn:after {
+    border-left:1rpx solid white;
+}
+
+button::after {
+    border:1rpx solid white;
+}
+
+._info {
+    padding-left: 6em
+}
+
+.page-num {
+    padding-right: 1%;
+    font-size: 12px;
+    flex: 0.5
+}
+
+.result-num {
+    padding-left: 1%;
+    font-size: 12px;
+    flex: 0.5;
+    color: red
+}

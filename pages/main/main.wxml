@@ -1,16 +1,33 @@
 <!--pages/main/main.wxml-->
-<view class='custom_menu'>
-    <!--  课表查询模块  -->
-    <view>
-        <button class="weui-btn mid-btn" bindtap="redictToClassTable" type="primary">课表查询</button>
+<view class='container'style='height: {{ui.windowHeight*0.9}}px'>
+  <view class='custom_menu' style='height: {{ui.menuHeight}}px; width: {{ui.menuWidth}}; padding-top: {{ui.padding}}px;'>
+
+    <view style='display: table-row;'>
+      <view class='component' bindtap="redictToClassTable" style=' height: {{ui.menuHeight/2}}px'>
+        <image src='../../static/classtable.png' mode='aspectFit' style='width: {{ui.iconWidth}}px; height: {{ui.iconHeight}}px'></image>
+        <view class='text' >课表查询</view>
+      </view>
+
+      <view class='component' bindtap="redictToScore" style=' height: {{ui.menuHeight/2}}px'>
+        <image src='../../static/score.png' mode='aspectFit' style='width: {{ui.iconWidth}}px; height: {{ui.iconHeight}}px'></image>
+        <view class='text'>成绩查询</view>
+      </view>
     </view>
-    <view>
-        <button class="weui-btn mid-btn" bindtap="redictToExam" type="primary">考试查询</button>
+
+    <view style='display: table-row; '>
+      <view class='component' bindtap="redictToBook" style=' height: {{ui.menuHeight/2}}px'>
+        <image src='../../static/library.png' mode='aspectFit' style='width: {{ui.iconWidth}}px; height: {{ui.iconHeight}}px'></image>
+        <view class='text'>图书查询</view>
+      </view>
+
+      <view class='component' bindtap="redictToNews" style=' height: {{ui.menuHeight/2}}px'>
+        <image src='../../static/news.png' mode='aspectFit' style='width: {{ui.iconWidth}}px; height: {{ui.iconHeight}}px'></image>
+        <view class='text'>资讯查询</view>
+      </view>
     </view>
-    <view>
-        <button class="weui-btn mid-btn" bindtap="redictToBook" type="primary">图书查询</button>
-    </view>
-    <view>
-        <button class="weui-btn mid-btn" bindtap="redictToScore" type="primary">资讯查询</button>
-    </view>
+  </view>
+</view>
+
+<view style='text-align: center'>
+    <image src='../../static/exit.png' style='width: {{ui.iconWidth / 3}}px; height: {{ui.iconHeight / 3}}px' bindtap='logout'></image>
 </view>

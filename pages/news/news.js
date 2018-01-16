@@ -1,10 +1,14 @@
 // pages/news/news.js
+let that = '';
+const config = require('../../config');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    newslist: ''
   
   },
 
@@ -12,7 +16,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    that = this;
+    this.search();
   },
 
   /**
@@ -26,6 +31,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    
   
   },
 
@@ -40,6 +46,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    
   
   },
 
@@ -62,5 +69,49 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  showNews: function (e) {
+    // console.log(e.currentTarget.dataset.number)
+    // wx.navigateTo({
+    //   url: "../../pages/news/newsDetail?newsContent=" + e.currentTarget.dataset.number,
+    // })
+    var news = this.data.newslist
+    console.log("length ",news.length)
+    for (var i = 0; i < news.length; i++) {
+      if (parseInt(news[i].number) === parseInt(e.currentTarget.dataset.number)) {
+        console.log('enter')
+        getApp().globalData.newsDetail = news[i]
+       // var newsDetail = JSON.stringify(news[i])
+        wx.navigateTo({
+          url: "../../pages/news/newsDetail",
+        })
+
+
+      }
+    }
+
+  },
+
+  search: function () {
+      wx.showLoading({
+          title: '正在加载...',
+      })
+    wx.request({
+      //url: config.service.newsUrl,
+      url: config.service.newsUrl,
+      method: "GET",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+
+      success: function (res) {
+        // console.log(res.data);
+        // newslist = res.data;
+        that.setData({
+          newslist: res.data
+        });
+        wx.hideLoading();
+      }
+    })
   }
 })

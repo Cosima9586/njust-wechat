@@ -4,7 +4,7 @@
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
 var host = 'https://58230511.qcloud.la';
-
+// var host = 'http://192.168.1.103:5000'
 var config = {
 
   // 下面的地址配合云端 Demo 工作
@@ -22,9 +22,11 @@ var config = {
 
     // 获取图书信息
     bookUrl: `${host}/weapp/book`,
+    bookDetailUrl: `${host}/weapp/bookdetail`,
+    
 
-    // 获取考试信息
-    examUrl: `${host}/weapp/exam`,
+    // 获取资讯信息
+    newsUrl: `${host}/weapp/news`,
 
 
 
