@@ -46,6 +46,7 @@ Page({
                     average += parseInt(value["成绩"]);
                 }
                 average /= score.length;
+                average = average.toFixed(2);
             } else {
                 average = '~ no ~';
             }
